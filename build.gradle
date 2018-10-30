@@ -1,0 +1,31 @@
+apply from: 'build-dependecies/vision-config.gradle'
+apply from: 'build-dependecies/vision-dependencies.gradle'
+
+buildscript {
+    ext {
+        kotlin = '1.2.71'
+        androidGradle = '3.2.1'
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$androidGradle"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin"
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin"
+        classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0-alpha06"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

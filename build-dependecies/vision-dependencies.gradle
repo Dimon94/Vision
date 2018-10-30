@@ -1,0 +1,161 @@
+ext {
+
+    //android
+    androidX = '1.0.0'
+    archComponents = '2.0.0'
+    navigation = '1.0.0-alpha06'
+    workManager = '1.0.0-alpha10'
+    constraintLayout = '2.0.0-alpha2'
+
+    //rx
+    rxJava2 = '2.2.2'
+    rxLint = '1.6.1'
+    rxKotlin = '2.2.0'
+    rxAndroid = '2.1.0'
+    rxbroadcast = '2.0.0'
+
+    //kt
+    coroutines = '0.26.1'
+
+    //di
+    dagger2 = '2.16' // Pinning this due to https://issuetracker.google.com/115738511
+    annotations = '16.0.3'
+    javaxAnnotation = '10.0-b28'
+
+    //network
+    okHttp = '3.11.0'
+    retrofit = '2.4.0'
+    apollo = '1.0.0-alpha2' //A strongly-typed, caching GraphQL client for Android, written in Java
+
+    //img
+    glide = '4.8.0'
+
+    //util
+    gson = '2.8.5'
+    timber = '4.7.1'
+    threetenabp = '1.1.0'
+    pandora = 'v1.0.1' //an android library for debugging what we care about directly in app.
+
+    //test
+    junit = '4.12'
+    espresso = '3.1.0-alpha4'
+    mockito = '2.8.9'
+    mockitoKotlin = '1.5.0'
+    assertJ = '3.11.1'
+    androidXTest = '1.1.0-alpha4'
+
+    //data analysis
+    firebase = '16.0.3'
+
+    //other
+    mvrx = '0.5.0'
+    epoxy = '3.0.0-rc1'
+    deepLinkDispatch = "3.1.1"
+
+    kotlin = [
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin",
+            "org.jetbrains.kotlin:kotlin-reflect:$kotlin",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:$coroutines",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+    ]
+
+    supportLibraries = [
+            "androidx.appcompat:appcompat:$androidX",
+            "androidx.coordinatorlayout:coordinatorlayout:$androidX",
+            "com.google.android.material:material:$androidX",
+            "androidx.drawerlayout:drawerlayout:$androidX",
+            "androidx.recyclerview:recyclerview-selection:$androidX",
+            "androidx.cardview:cardview:$androidX",
+            "androidx.recyclerview:recyclerview:$androidX",
+            "androidx.annotation:annotation:$androidX",
+            "androidx.core:core:$androidX",
+            "androidx.viewpager:viewpager:$androidX",
+            "androidx.fragment:fragment:$androidX",
+            "androidx.swiperefreshlayout:swiperefreshlayout:$androidX",
+            "androidx.browser:browser:$androidX",
+            "androidx.webkit:webkit:$androidX",
+            "androidx.emoji:emoji:$androidX",
+            "androidx.constraintlayout:constraintlayout:$constraintLayout",
+            "androidx.constraintlayout:constraintlayout-solver:$constraintLayout",
+            "android.arch.navigation:navigation-ui:$navigation",
+            "android.arch.navigation:navigation-runtime:$navigation",
+            "android.arch.navigation:navigation-runtime-ktx:$navigation",
+            "android.arch.navigation:navigation-fragment:$navigation",
+            "android.arch.navigation:navigation-fragment-ktx:$navigation",
+            "android.arch.work:work-runtime:$workManager",
+    ]
+
+    archs = [
+            "androidx.lifecycle:lifecycle-extensions:$archComponents",
+            "androidx.lifecycle:lifecycle-livedata:$archComponents",
+            "androidx.lifecycle:lifecycle-reactivestreams:$archComponents",
+            "androidx.paging:paging-common:$archComponents",
+            "androidx.room:room-common:$archComponents",
+            "androidx.room:room-rxjava2:$archComponents",
+            "androidx.room:room-compiler:$archComponents",
+            "androidx.paging:paging-runtime:$archComponents",
+            "androidx.core:core-ktx:$androidX",
+            "com.snakydesign.livedataextensions:lives:1.0.1"
+    ]
+
+    network = [
+            "com.squareup.okhttp3:okhttp:$okHttp",
+            "com.squareup.okhttp3:logging-interceptor:$okHttp",
+            "com.squareup.retrofit2:retrofit:$retrofit",
+            "com.squareup.retrofit2:adapter-rxjava2:$retrofit",
+            "com.squareup.retrofit2:converter-gson:$retrofit",
+            "com.google.code.gson:gson:$gson",
+            "com.github.bumptech.glide:glide:$glide",
+            "com.jakewharton.timber:timber:$timber",
+            "com.apollographql.apollo:apollo-runtime:$apollo",
+            "com.apollographql.apollo:apollo-rx2-support:$apollo"
+    ]
+
+    rxJava = [
+            "io.reactivex.rxjava2:rxjava:$rxJava2",
+            "io.reactivex.rxjava2:rxkotlin:$rxKotlin",
+            "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+    ]
+
+    di = [
+            "com.google.dagger:dagger:$dagger2",
+            "com.google.dagger:dagger-android-support:$dagger2",
+            "org.glassfish:javax.annotation:$javaxAnnotation",
+            "org.jetbrains:annotations:$annotations"
+    ]
+
+    process = [
+            "com.google.dagger:dagger-android-processor:$dagger2",
+            "com.google.dagger:dagger-compiler:$dagger2",
+            "com.github.bumptech.glide:compiler:$glide",
+            "androidx.room:room-runtime:$archComponents",
+            "com.airbnb.android:epoxy-processor:$epoxy"
+    ]
+
+    test = [
+            "junit:junit:$junit",
+            "org.assertj:assertj-core:$assertJ",
+            "org.mockito:mockito-core:$mockito",
+            "com.nhaarman:mockito-kotlin:$mockitoKotlin",
+            "androidx.test:runner:$androidXTest",
+            "androidx.test:rules:$androidXTest",
+            "androidx.test.espresso:espresso-core:$espresso",
+            "androidx.room:room-runtime:$archComponents",
+            "android.arch.work:work-testing:$workManager"
+    ]
+
+    extrasLibraries = [
+            "com.jakewharton.threetenabp:threetenabp:$threetenabp",
+            "com.cantrowitz:rxbroadcast:$rxbroadcast",
+            "com.airbnb.android:mvrx:$mvrx"
+    ]
+
+    developmentDependencies = [
+            "com.github.whataa:pandora:$pandora"
+    ]
+
+    releaseDevelopmentDependencies = [
+            "com.github.whataa:pandora-no-op:$pandora"
+    ]
+}
