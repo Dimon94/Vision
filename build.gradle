@@ -3,7 +3,7 @@ apply from: 'build-dependecies/vision-dependencies.gradle'
 
 buildscript {
     ext {
-        kotlin = '1.2.71'
+        kotlin = '1.3.0'
         androidGradle = '3.2.1'
     }
     repositories {
