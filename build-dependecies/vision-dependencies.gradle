@@ -82,8 +82,11 @@ ext {
             "android.arch.navigation:navigation-runtime:$navigation",
             "android.arch.navigation:navigation-runtime-ktx:$navigation",
             "android.arch.navigation:navigation-fragment:$navigation",
-            "android.arch.navigation:navigation-fragment-ktx:$navigation",
-            "android.arch.work:work-runtime:$workManager",
+            "android.arch.navigation:navigation-fragment-ktx:$navigation"
+    ]
+
+    archWorkManager = [
+            "android.arch.work:work-runtime:$workManager"
     ]
 
     archs = [

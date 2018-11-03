@@ -19,7 +19,13 @@ android {
         versionCode config.versionCode
         versionName config.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -56,6 +62,22 @@ android {
     configurations {
         all*.exclude module: 'javax.annotation'
     }
+
+    packagingOptions {
+        // Exclude AndroidX version files
+        exclude 'META-INF/*.version'
+        // Exclude consumer proguard files
+        exclude 'META-INF/proguard/*'
+        // Exclude the Firebase/Fabric/other random properties files
+        exclude '/*.properties'
+        exclude 'fabric/*.properties'
+        exclude 'META-INF/metadata.kotlin_module'
+        exclude 'META-INF/descriptors.kotlin_module'
+        exclude 'META-INF/deserialization.kotlin_module'
+        exclude 'META-INF/metadata.jvm.kotlin_module'
+        exclude 'META-INF/descriptors.jvm.kotlin_module'
+        exclude 'META-INF/util.runtime.kotlin_module'
+    }
 }
 
 dependencies {
@@ -69,6 +91,12 @@ dependencies {
     implementation dependency.network
     implementation dependency.rxJava
     implementation dependency.di
+
+    implementation(dependency.archWorkManager) {
+        // We have to exclude this since it wants 1.1.1-rc1 and we're using 1.1.1
+        exclude group: 'android.arch.persistence.room', module: 'runtime'
+        exclude group: 'com.google.guava', module: 'listenablefuture'
+    }
 
     debugImplementation dependency.developmentDependencies
     releaseImplementation dependency.releaseDevelopmentDependencies
